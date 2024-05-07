@@ -22,10 +22,9 @@ def jugar():
 def determinar_ganador(usuario, maquina):
     if usuario == maquina:
         return "Empate"
-    elif (usuario == 'piedra' and maquina == 'tijeras') or (
-            usuario == 'papel'
-            and maquina == 'piedra') or (usuario == 'tijeras'
-                                         and maquina == 'papel'):
+    elif (usuario == 'piedra' and maquina == 'tijeras') or \
+     (usuario == 'papel' and maquina == 'piedra') or \
+     (usuario == 'tijeras' and maquina == 'papel'):
         return "Usuario"
     else:
         return "Maquina"
@@ -36,8 +35,12 @@ def actualizar_resultados(resultado):
 
     if resultado == "Usuario":
         ganadas_usuario += 1
+        print("¡Ganaste, felicidades!")
     elif resultado == "Maquina":
         ganadas_maquina += 1
+        print("¡La computadora ganó!")
+    else:
+        print("¡Empate!")
 
     print("Resultado del juego:")
     print("Usuario:", ganadas_usuario, "veces ganadas")
